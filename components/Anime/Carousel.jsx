@@ -23,7 +23,7 @@ const AnimeCarousel = ({ anime, title }) => {
           </div>
 
           <CarouselContent>
-            {anime.map((anime, index) => (
+            {anime && anime?.map((anime, index) => (
               <CarouselItem key={anime.id} className={'lg:basis-1/5 md:basis-1/4 sm:basis-1/3 basis-2/3'}>
                 <CarouselCard anime={anime} />
               </CarouselItem>

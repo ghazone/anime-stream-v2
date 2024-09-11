@@ -20,7 +20,7 @@ import { episodeDetails, episodeFetcher } from "@/lib/utils"
   
   export async function Episodes({episodes}) {
     const episode = await episodeFetcher(episodes)
-    console.log(episode.length)
+    // console.log(episode.length)
     return (
       <div className="h-80 scrollbar overflow-y-auto pr-5">
 

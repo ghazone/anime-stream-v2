@@ -22,7 +22,7 @@ const BannerCard = ({ anime }) => {
                 <div></div>
                 <div className='flex flex-col sm:items-start items-center sm:gap-4 max-w-3xl gap-3 lg:px-6 px-4'>
                     <h4 className='lg:text-2xl sm:text-start text-center text-xl font-medium text-neutral-50'>{title.english}</h4>
-                    <div className='flex gap-3 flex-wrap'>
+                    <div className='flex gap-3 max-sm:place-content-center flex-wrap'>
                         {genres.length>0 && genres?.map((lst, index) => {
                             return <Badge key={index} variant={"destructive"}>{lst.toUpperCase()}</Badge>
                         })}

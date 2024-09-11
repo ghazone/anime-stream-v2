@@ -11,7 +11,7 @@ const Banner = ({ anime }) => {
             className="w-full h-full"
         >
             <CarouselContent>
-                {anime.map((anime, index) => (
+                {anime.length > 0 && anime?.map((anime, index) => (
                     <CarouselItem key={anime.id}>
                         <BannerCard anime={anime} />
                     </CarouselItem>

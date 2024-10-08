@@ -9,10 +9,11 @@ export default async function Page({ params: { id } }) {
     const data = await anilistFetcher(`info/${id}`);
     const { cover, title, image, description, status, genres, totalEpisodes, releaseDate } = data
     const slug = slugify(title.romaji)
+    // console.log(slug)
     
     return (
-        <main className="flex min-h-screen w-full bg-[#010101] flex-col items-center justify-between">
-            <section className="w-full relative flex flex-col xl:p-16 md:p-8 p-4 mb-12">
+        <main className="flex min-h-screen w-full flex-col items-center justify-between">
+            <section className="w-full relative flex flex-col xl:pt-32 xl:p-16 md:p-8 p-4 mb-12">
                 <div className="absolute z-0 top-0 left-0 right-0 bottom-0 ">
                     <Image
                         src={cover}
@@ -48,13 +49,13 @@ export default async function Page({ params: { id } }) {
                             </div>
                             <p className="text-neutral-300 text-sm">Total Episodes: {totalEpisodes}</p>
                             <p className="text-neutral-300 lg:text-sm text-xs">{description}</p>
-                            <Button variant={'outline'}>Watch Now</Button>
+                            <Button>Watch Now</Button>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="w-full relative flex flex-col xl:p-16 md:p-8 p-4 mb-12">
-                <Episodes episodes={slug}/>
+            <section className="w-full relative flex flex-col xl:px-16 md:px-8 px-4 mb-12">
+                <Episodes episodes={slug} id={id}/>
             </section>
         </main>
     );

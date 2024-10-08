@@ -15,7 +15,7 @@ export default function Page() {
             </section>
             <section className="w-full max-w-7xl flex flex-col my-12">
                 <Suspense fallback={<SkeletonCardList />}>
-                    <CarouselWrapper title={'On-going Anime'} target={'airing-schedule'} />
+                    <CarouselWrapper title={'On-going'} target={'airing-schedule'} />
                 </Suspense>
             </section>
             <section className="w-full max-w-7xl flex flex-col my-12">

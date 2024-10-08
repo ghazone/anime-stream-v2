@@ -13,7 +13,7 @@ export default async function Page({ params: { id } }) {
     
     return (
         <main className="flex min-h-screen w-full flex-col items-center justify-between">
-            <section className="w-full relative flex flex-col xl:pt-32 xl:p-16 md:p-8 p-4 mb-12">
+            <section className="w-full relative flex flex-col xl:pt-24 md:pt-12 pt-8 xl:p-16 md:p-8 p-4 mb-12">
                 <div className="absolute z-0 top-0 left-0 right-0 bottom-0 ">
                     <Image
                         src={cover}

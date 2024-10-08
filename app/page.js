@@ -7,7 +7,7 @@ import SkeletonCardList from "@/components/Skeleton/AnimeSkeletonList";
 export default function Page() {
     
     return (
-        <main className="flex min-h-screen w-full bg-[#010101] flex-col items-center justify-between xl:p-16 md:p-8 p-4">
+        <main className="flex min-h-screen w-full bg-[#010101] flex-col items-center justify-between xl:pt-24 md:pt-12 pt-8 xl:px-16 md:px-8 px-4">
             <section className="w-full max-w-7xl flex flex-col my-12">
                 <Suspense fallback={<BannerSkeleton />}>
                     <BannerWrapper target={'trending'} />

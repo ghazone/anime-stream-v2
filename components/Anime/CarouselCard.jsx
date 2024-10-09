@@ -8,7 +8,7 @@ const CarouselCard = ({anime}) => {
     const { id, title, image,  totalEpisodes, episode}= anime
     // console.log(id)
     return (
-        <Link href={`anime/${id}`}>
+        <Link href={`/anime/${id}`}>
             <Card className={'hover:scale-[0.97] transation-all duration-300'}>
                 <CardHeader>
                     <Image

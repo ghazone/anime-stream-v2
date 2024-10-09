@@ -6,7 +6,7 @@ import Image from "next/image";
 import {Episodes} from "@/components/Anime/Details/Episodes";
 
 export default async function Page({ params: { id } }) {
-    const data = await anilistFetcher(`info/${id}`);
+    const data = await anilistFetcher(`/info/${id}`);
     const { cover, title, image, description, status, genres, totalEpisodes, releaseDate } = data
     const slug = slugify(title.romaji)
     // console.log(slug)

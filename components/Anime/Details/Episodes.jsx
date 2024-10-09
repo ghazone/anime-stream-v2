@@ -19,12 +19,11 @@ export const EpisodeDetail = async (id) => {
 };
 
 export async function Episodes({ episodes, id }) {
-  if (id == 173694)
-    episodes =
-      "hazurewaku-no-joutai-ijou-skill-de-saikyou-ni-natta-ore-ga-subete-wo-juurin-suru-made";
+  if (id == 173694) episodes = "hazurewaku-no-joutai-ijou-skill-de-saikyou-ni-natta-ore-ga-subete-wo-juurin-suru-made";
   if (id == 166477) episodes = "megami-no-cafe-terrace-2nd-season";
   if (id == 154412) episodes = "megami-no-cafe-terrace";
   if (id == 166700) episodes = "tasogare-out-focus";
+  if (id == 117074) episodes = "isekai-quartet-movie-another-world";
   const episode = await episodeFetcher(episodes);
   // console.log(episode.length)
   return (

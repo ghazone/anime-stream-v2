@@ -13,7 +13,7 @@ import { Paging } from "@/components/Anime/Paging";
           <h1 className="text-3xl font-bold text-neutral-50">Search Result for {decode}</h1>
         </div>
         <Suspense fallback={<SkeletonCardList />}>
-          <ListAnime target={`${key}?page=${page || 1}&perPage=20`} />
+          <ListAnime target={`${key}?page=${page || 1}`} />
         </Suspense>
         <Paging page={page} />
       </section>

@@ -19,22 +19,16 @@ export const EpisodeDetail = async (id) => {
 };
 
 export async function Episodes({ episodes, id }) {
-  if (id == 173694) episodes = "hazurewaku-no-joutai-ijou-skill-de-saikyou-ni-natta-ore-ga-subete-wo-juurin-suru-made";
-  if (id == 166477) episodes = "megami-no-cafe-terrace-2nd-season";
-  if (id == 154412) episodes = "megami-no-cafe-terrace";
-  if (id == 166700) episodes = "tasogare-out-focus";
-  if (id == 117074) episodes = "isekai-quartet-movie-another-world";
-  const episode = await episodeFetcher(episodes);
   // console.log(episode.length)
   return (
     <div className="h-80 scrollbar overflow-y-auto pr-5">
       <Accordion type="single" collapsible className="w-full">
-        {episode?.length > 0 ? (
-          episode?.map((link, index) => {
+        {episodes?.length > 0 ? (
+          episodes?.map((link) => {
             return (
               <AccordionItem value={link.id} key={link.number}>
                 <AccordionTrigger>Episode {link.number}</AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className="p-5">
                   <EpisodeDetail id={link.id} />
                 </AccordionContent>
               </AccordionItem>

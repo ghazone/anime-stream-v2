@@ -12,7 +12,7 @@ export default function page({ searchParams: { page } }) {
           <h1 className="text-3xl font-bold text-neutral-50">On-going Anime</h1>
         </div>
         <Suspense fallback={<SkeletonCardList />}>
-          <ListAnime target={`airing-schedule?page=${page||1}`} />
+          <ListAnime target={`recent-episodes?page=${page||1}`} />
         </Suspense>
         <Paging page={page} />
       </section>

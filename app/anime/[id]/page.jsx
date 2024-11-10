@@ -7,8 +7,8 @@ import {Episodes} from "@/components/Anime/Details/Episodes";
 
 export default async function Page({ params: { id } }) {
     const data = await anilistFetcher(`/info/${id}`);
-    const { cover, title, image, description, status, genres, totalEpisodes, releaseDate } = data
-    const slug = slugify(title.romaji)
+    const { title, image, description, status, genres, totalEpisodes,episodes, type } = data
+    // const slug = slugify(title.romaji)
     // console.log(slug)
     
     return (
@@ -16,8 +16,8 @@ export default async function Page({ params: { id } }) {
             <section className="w-full relative flex flex-col xl:pt-24 md:pt-12 pt-8 xl:p-16 md:p-8 p-4 mb-12">
                 <div className="absolute z-0 top-0 left-0 right-0 bottom-0 ">
                     <Image
-                        src={cover}
-                        alt={title.romaji}
+                        src={"/pxfuel.jpg"}
+                        alt={'Hero Background'}
                         loading="lazy"
                         quality={100}
                         width={1000}
@@ -30,7 +30,7 @@ export default async function Page({ params: { id } }) {
                     <div className="flex lg:flex-row flex-col lg:gap-10 gap-8 items-center">
                         <Image
                             src={image}
-                            alt={title.romaji}
+                            alt={title}
                             loading="lazy"
                             width={300}
                             height={300}
@@ -38,13 +38,13 @@ export default async function Page({ params: { id } }) {
                         />
                         <div className="flex flex-col gap-5 lg:max-w-[60%] items-start">
                             <div className="flex flex-col gap-3 items-start">
-                                <h1 className="text-neutral-50 md:text-3xl text-2xl font-medium">{title.romaji}</h1>
+                                <h1 className="text-neutral-50 md:text-3xl text-2xl font-medium">{title}</h1>
                                 <div className="flex gap-2 flex-wrap">
                                     {genres.map((lst, index) => {
                                         return <Badge key={index} >{lst.toUpperCase()}</Badge>
                                     })}
                                     <Badge >{status}</Badge>
-                                    <Badge variant={'destructive'} >{releaseDate}</Badge>
+                                    <Badge variant={'destructive'} >{type}</Badge>
                                 </div>
                             </div>
                             <p className="text-neutral-300 text-sm">Total Episodes: {totalEpisodes}</p>
@@ -55,7 +55,7 @@ export default async function Page({ params: { id } }) {
                 </div>
             </section>
             <section className="w-full relative flex flex-col xl:px-16 md:px-8 px-4 mb-12">
-                <Episodes episodes={slug} id={id}/>
+                <Episodes episodes={episodes}/>
             </section>
         </main>
     );

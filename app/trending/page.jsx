@@ -11,7 +11,7 @@ export default function page({ searchParams: { page } }) {
           <h1 className="text-3xl font-bold text-neutral-50">Trending Anime</h1>
         </div>
         <Suspense fallback={<SkeletonCardList />}>
-          <ListAnime target={`trending?page=${page || 1}&perPage=20`} />
+          <ListAnime target={`top-airing?page=${page || 1}`} />
         </Suspense>
         <Paging page={page} />
       </section>

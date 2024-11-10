@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const CarouselCard = ({anime}) => {
-    const { id, title, image,  totalEpisodes, episode}= anime
+    const { id, title, image, episodeNumber}= anime
     // console.log(id)
     return (
         <Link href={`/anime/${id}`}>
@@ -21,8 +21,8 @@ const CarouselCard = ({anime}) => {
                     />
                 </CardHeader>
                 <CardContent className="flex flex-col justify-center">
-                    <CardTitle className={'line-clamp-1 md:mb-3 mb-2'}>{title.userPreferred || title.english}</CardTitle>
-                    <Badge variant={"destructive"} className={'self-start'} >{episode != null || episode!= undefined ? `Episode ${episode}` : `Total Episodes ${totalEpisodes}`}</Badge>
+                    <CardTitle className={'line-clamp-1 md:mb-3 mb-2'}>{title}</CardTitle>
+                    <Badge variant={"destructive"} className={'self-start'} > Episode {episodeNumber} </Badge>
                 </CardContent>
             </Card>
         </Link>

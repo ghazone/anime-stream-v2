@@ -26,7 +26,7 @@ const BannerCard = ({ anime }) => {
                         {genres.length>0 && genres?.map((lst, index) => {
                             return <Badge key={index} variant={"destructive"}>{lst.toUpperCase()}</Badge>
                         })}
-                        <Badge variant={"secondary"} >{episodeNumber}</Badge>
+                        <Badge variant={"secondary"} >Total Episodes: {episodeNumber}</Badge>
                     </div>
                     {/* <div className='sm:block hidden'>
                         <p className='text-balance sm:text-[15px] text-sm md:line-clamp-4 line-clamp-1 text-neutral-300'>{description}</p>

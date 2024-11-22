@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import Hls from 'hls.js';
 
 const Video = ({ src }) => {
+  console.log(src)
   const videoRef = useRef(null);
 
   useEffect(() => {

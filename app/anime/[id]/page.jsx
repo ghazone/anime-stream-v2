@@ -40,7 +40,7 @@ export default async function Page({ params: { id } }) {
                             <div className="flex flex-col gap-3 items-start">
                                 <h1 className="text-neutral-50 md:text-3xl text-2xl font-medium">{title}</h1>
                                 <div className="flex gap-2 flex-wrap">
-                                    {genres.map((lst, index) => {
+                                    {genres?.map((lst, index) => {
                                         return <Badge key={index} >{lst.toUpperCase()}</Badge>
                                     })}
                                     <Badge >{status}</Badge>

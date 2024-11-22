@@ -1,5 +1,4 @@
 "use client"
-
 import { 
     Select, 
     SelectContent, 
@@ -9,13 +8,15 @@ import {
 } from "@/components/ui/select"
 import Video from "@/components/Anime/Details/Video"
 import { useState } from "react"
+import ProxyPlayer from "./ProxyPlayer"
 
-export const Player = ({ link }) => {
+export const Player = ({ link,refs }) => {
     const [resolution,setResolution] = useState(link[0].url)
-    // console.log(resolution)
+    // console.log(refs)
     return (
     <div className="w-full aspect-video" >
-        <Video src={resolution} />
+        {/* <Video src={resolution} /> */}
+        <ProxyPlayer src={resolution} refs={`{"referer":"${refs}"}`} />
         <Select onValueChange={ value => setResolution(value) }>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Choose Resolution" />

@@ -11,7 +11,6 @@ const AnimeCarousel = ({ anime, title }) => {
   // console.log(slug)
   return (
     <Fragment>
-      <div className='flex flex-col '>
         <Carousel
           className="w-full flex flex-col lg:gap-6 gap-4 "
           opts={{ dragFree: true }}
@@ -30,7 +29,6 @@ const AnimeCarousel = ({ anime, title }) => {
             ))}
           </CarouselContent>
         </Carousel>
-      </div>
     </Fragment>
   )
 }

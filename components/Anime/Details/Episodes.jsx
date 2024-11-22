@@ -5,15 +5,19 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Player } from "@/components/Anime/Details/Player";
-import { episodeDetails, episodeFetcher } from "@/lib/utils";
+import { episodeDetails, episodeFetcher, episodeServer } from "@/lib/utils";
+import FIframe from "@/components/FIframe";
 
-export const EpisodeDetail = async (id) => {
+export const EpisodeDetail = async ({ id }) => {
   const detail = await episodeDetails(id);
+  // const detail = await episodeServer(id)
   // console.log(id)
   // console.log(detail)
   return (
     <div>
-      <Player link={detail} />
+      <Player link={detail.sources} refs={detail.headers.Referer} />
+      {/* <iframe src={detail[1].url} frameorder="0" height={"100%"} width={"100%"} className="aspect-video"></iframe> */}
+      {/* <FIframe src={detail[3].url} /> */}
     </div>
   );
 };
@@ -28,7 +32,7 @@ export async function Episodes({ episodes, id }) {
             return (
               <AccordionItem value={link.id} key={link.number}>
                 <AccordionTrigger>Episode {link.number}</AccordionTrigger>
-                <AccordionContent className="p-5">
+                <AccordionContent>
                   <EpisodeDetail id={link.id} />
                 </AccordionContent>
               </AccordionItem>
